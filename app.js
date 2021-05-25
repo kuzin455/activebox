@@ -18,5 +18,16 @@ $(function () {
     console.log(scrollPos);
   });
 
-  console.log(scrollPos);
+
+  $("[data-scroll]").on("click", function(event){
+    event.preventDefault();
+
+    let elId = $(this).data("scroll");
+    let elOffset = $(elId).offset().top;
+
+    $("html, body").animate({
+      scrollTop: elOffset - 70
+    }, 700)
+    console.log(elOffset)
+  }) 
 });
